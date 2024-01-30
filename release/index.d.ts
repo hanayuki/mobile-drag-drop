@@ -16,4 +16,5 @@ export interface Config {
     elementFromPoint?: (x: number, y: number) => Element;
 }
 export declare function polyfill(override?: Config): boolean;
+export declare function clearPolyfill(): void;
 export as namespace MobileDragDrop;

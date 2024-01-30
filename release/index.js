@@ -782,8 +782,17 @@ function polyfill(override) {
     }
     return true;
 }
+function clearPolyfill() {
+    if (config.holdToDrag) {
+        removeDocumentListener("touchstart", onDelayTouchstart);
+    }
+    else {
+        removeDocumentListener("touchstart", onTouchstart);
+    }
+}
 
 exports.polyfill = polyfill;
+exports.clearPolyfill = clearPolyfill;
 exports.supportsPassiveEventListener = supportsPassiveEventListener;
 
 Object.defineProperty(exports, '__esModule', { value: true });
